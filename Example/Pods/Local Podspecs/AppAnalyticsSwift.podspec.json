@@ -1,0 +1,22 @@
+{
+  "name": "AppAnalyticsSwift",
+  "version": "0.1.0",
+  "summary": "A short description of AppAnalyticsSwift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AppAnalyticsSwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Vahid Sayad": "vahidgiga@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AppAnalyticsSwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AppAnalyticsSwift/Classes/**/*"
+}

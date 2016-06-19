@@ -1,0 +1,16 @@
+PODS:
+  - AppAnalyticsSwift (0.1.0)
+
+DEPENDENCIES:
+  - AppAnalyticsSwift (from `../`)
+
+EXTERNAL SOURCES:
+  AppAnalyticsSwift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AppAnalyticsSwift: 7a583ae6cc8511861849fa4f6f18bb28eb4c1dfe
+
+PODFILE CHECKSUM: 083e36783b55b09b0414603e0f905f19cd4e2633
+
+COCOAPODS: 1.0.1
