@@ -1,6 +1,6 @@
 # AppAnalyticsSwift
 
-[![CI Status](http://img.shields.io/travis/Vahid Sayad/AppAnalyticsSwift.svg?style=flat)](https://travis-ci.org/Vahid Sayad/AppAnalyticsSwift)
+[![CI Status](http://img.shields.io/travis/AppAnalyticsSwift/AppAnalyticsSwift.svg?style=flat)](https://travis-ci.org/Vahid Sayad/AppAnalyticsSwift)
 [![Version](https://img.shields.io/cocoapods/v/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 [![License](https://img.shields.io/cocoapods/l/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 [![Platform](https://img.shields.io/cocoapods/p/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Enable http domains exception
 
 ## Installation
 
@@ -22,7 +23,7 @@ pod "AppAnalyticsSwift"
 
 ## Author
 
-Vahid Sayad, vahidgiga@gmail.com
+AppAnalytics Develpment Team, development@appanalytics.ir
 
 ## License
 
