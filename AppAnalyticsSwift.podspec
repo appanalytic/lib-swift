@@ -38,6 +38,7 @@ AppAnalytics class initilize with a access key that can be found in your appanal
   #   'AppAnalyticsSwift' => ['AppAnalyticsSwift/Assets/*.png']
   # }
 
+  # Example: 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
