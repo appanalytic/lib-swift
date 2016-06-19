@@ -1,0 +1,6 @@
+use_frameworks!
+target 'AppAnalyticsSwift_Tests' do
+  pod 'AppAnalyticsSwift', :path => '../'
+  
+  
+end
