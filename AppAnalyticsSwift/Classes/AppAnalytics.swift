@@ -23,7 +23,7 @@ public class AppAnalytics{
         
         NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
             if let data = data {
-                print("AppAnalytic Info: [", String(data: data, encoding: NSUTF8StringEncoding),"]")
+                print("AppAnalytic Info: [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
             }
             if let error = error {
                 print("AppAnalytic Error: [\(error.localizedDescription)")
