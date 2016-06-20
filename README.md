@@ -6,11 +6,14 @@
 [![Platform](https://img.shields.io/cocoapods/p/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 
 ## Example
-
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 Enable http domains exception
+info.plist >> add App Transport Security Settings 
+			  |
+			  |
+			  O-> Allow Arbitrary Loads = YES 
 
 ## Installation
 
