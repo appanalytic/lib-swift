@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class AppAnalytics{
+public class AppAnalyticsSwift{
     
     private let _accessKey: String
     private var _APIURL = "http://appanalytics.ir/api/v1/iosservice/initialize/";
