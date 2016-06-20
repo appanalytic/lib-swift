@@ -31,8 +31,8 @@ AppAnalytics class initilize with a access key that can be found in your appanal
 
   s.ios.deployment_target = '8.0'
 
-  #s.source_files = 'AppAnalyticsSwift/Classes/**/*'
-  s.source_files  = "AppAnalyticsSwift", "AppAnalyticsSwift/**/*.{h,m,swift}"
+  s.source_files = 'AppAnalyticsSwift/Classes/**/*'
+  #s.source_files  = "AppAnalyticsSwift", "AppAnalyticsSwift/**/*.{h,m,swift}"
   
   # s.resource_bundles = {
   #   'AppAnalyticsSwift' => ['AppAnalyticsSwift/Assets/*.png']

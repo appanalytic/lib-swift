@@ -10,10 +10,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 Enable http domains exception
-info.plist >> add App Transport Security Settings 
-			  |
-			  |
-			  O-> Allow Arbitrary Loads = YES 
+info.plist >> add App Transport Security Settings ++>> Allow Arbitrary Loads = YES 
 
 ## Installation
 
