@@ -1,6 +1,6 @@
 # AppAnalyticsSwift
 
-[![CI Status](http://img.shields.io/travis/AppAnalyticsSwift/AppAnalyticsSwift.svg?style=flat)](https://travis-ci.org/appanalytic/lib-swift)
+[![CI Status](http://img.shields.io/travis/appanalytic/lib-swift.svg?style=flat)](https://travis-ci.org/appanalytic/lib-swift)
 [![Version](https://img.shields.io/cocoapods/v/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 [![License](https://img.shields.io/cocoapods/l/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 [![Platform](https://img.shields.io/cocoapods/p/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
