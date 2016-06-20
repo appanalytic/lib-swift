@@ -21,6 +21,11 @@ it, simply add the following line to your Podfile:
 pod "AppAnalyticsSwift"
 ```
 
+Insert
+```swift
+import AppAnalyticsSwift
+```
+in your project view controller
 ## Author
 
 AppAnalytics Develpment Team, development@appanalytics.ir
