@@ -111,7 +111,7 @@ public class AppAnalyticsSwift{
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     private func getDeviceInfo() -> NSData {
         var json = NSData()
-        var info = NSMutableDictionary()
+        let info = NSMutableDictionary()
         if self._deviceModelName != "Error" {
             info["DeviceModel"] = self._deviceModelName
         }
