@@ -6,11 +6,15 @@
 [![Platform](https://img.shields.io/cocoapods/p/AppAnalyticsSwift.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsSwift)
 
 ## Example
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project:
+1. Clone the repo
+2. Run `pod install` from the `Example/RealAppTest` directory first
+3. Run `RealAppTest.xcworkspace`
 
 ## Requirements
 Enable http domains exception
-info.plist >> add App Transport Security Settings ++>> Allow Arbitrary Loads = YES 
+info.plist >> 
+Add `App Transport Security Settings` ++>> `Allow Arbitrary Loads = YES` 
 
 ## Installation
 
@@ -20,12 +24,30 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "AppAnalyticsSwift"
 ```
+Run `pod install` from terminal
+Run `YOUR_APP_NAME.xcworkspace`
+Installation Completed!
 
-Insert
+## How to use
+Insert following line to your `ViewController`
 ```swift
 import AppAnalyticsSwift
 ```
-in your project view controller
+Initialize `AppAnalyticsSwift` class and call `submitCampaing` method:
+```swift
+let app = AppAnalyticsSwift(accessKey = "YOUR_ACCESS_KEY")
+app.submitCampain()
+```
+
+#Events
+If you need to add event with value just call `addEvent` method:
+```swift
+app.addEvent("StartMainController", NSDate())
+```
+To add event without value call `addEvent` method add put `nil` for value : 
+```swift
+app.addEvent("StartMainController", nil)
+```
 ## Author
 
 AppAnalytics Develpment Team, development@appanalytics.ir
