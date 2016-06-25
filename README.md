@@ -7,13 +7,18 @@
 
 ## Example
 To run the example project:
+
 1. Clone the repo
+
 2. Run `pod install` from the `Example/RealAppTest` directory first
+
 3. Run `RealAppTest.xcworkspace`
 
 ## Requirements
-Enable http domains exception
+Enable http domains exception:
+
 info.plist >> 
+
 Add `App Transport Security Settings` ++>> `Allow Arbitrary Loads = YES` 
 
 ## Installation
@@ -25,7 +30,9 @@ it, simply add the following line to your Podfile:
 pod "AppAnalyticsSwift"
 ```
 Run `pod install` from terminal
+
 Run `YOUR_APP_NAME.xcworkspace`
+
 Installation Completed!
 
 ## How to use
@@ -36,6 +43,7 @@ import AppAnalyticsSwift
 Initialize `AppAnalyticsSwift` class and call `submitCampaing` method:
 ```swift
 let app = AppAnalyticsSwift(accessKey = "YOUR_ACCESS_KEY")
+
 app.submitCampain()
 ```
 
