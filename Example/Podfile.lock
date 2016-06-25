@@ -1,5 +1,5 @@
 PODS:
-  - AppAnalyticsSwift (0.1.0)
+  - AppAnalyticsSwift (0.1.1)
 
 DEPENDENCIES:
   - AppAnalyticsSwift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AppAnalyticsSwift: 7a583ae6cc8511861849fa4f6f18bb28eb4c1dfe
+  AppAnalyticsSwift: c4323d8d924920dba411cd730d0e4abd3054db48
 
 PODFILE CHECKSUM: 083e36783b55b09b0414603e0f905f19cd4e2633
 

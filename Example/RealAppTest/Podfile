@@ -1,0 +1,6 @@
+use_frameworks!
+target 'RealAppTest' do
+  pod 'AppAnalyticsSwift', :git => 'https://github.com/appanalytic/lib-swift.git'
+  
+  
+end

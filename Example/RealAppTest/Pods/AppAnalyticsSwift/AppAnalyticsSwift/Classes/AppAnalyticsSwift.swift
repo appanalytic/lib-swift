@@ -50,15 +50,12 @@ public extension UIDevice {
     
 }
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////
-// MARK: AppAnalyticsSwift Class
-// //////////////////////////////////////////////////////////////////////////////////////////////////
+
 public class AppAnalyticsSwift{
     
     private let _accessKey: String
-    private var _APIURL = "http://appanalytics.ir/api/v1/iosservice/initialize/"
-    private var _APIURL_DeviceInfo = "http://appanalytics.ir/api/v1/iosservice/setdeviceinfo/"
-    private var _APIURL_AddEvent = "http://appanalytics.ir/api/v1/iosservice/addevent/"
+    private var _APIURL = "http://appanalytics.ir/api/v1/iosservice/initialize/";
+    private var _APIURL_DeviceInfo = "http://appanalytics.ir/api/v1/iosservice/setdeviceinfo/";
     private let _UUID: String
     private var _deviceModelName: String
     private var _iOSVersion: String
@@ -67,7 +64,7 @@ public class AppAnalyticsSwift{
     private var _multitaskingSupported: String
     
     // //////////////////////////////////////////////////////////////////////////////////////////////////
-    // MARK: submitCampain Function
+    //MARK: submitCampain Function
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     public func submitCampaign(){
         let url = NSURL(string: self._APIURL + self._UUID)
@@ -87,39 +84,7 @@ public class AppAnalyticsSwift{
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////////
-    // MARK: AddEvent()
-    // //////////////////////////////////////////////////////////////////////////////////////////////////
-    public func addEvent(eventName eventName: String!, eventValue: String?){
-        var tmpURL = self._APIURL_AddEvent + self._UUID + "/"
-        
-        if eventName.characters.count > 0 {
-            tmpURL += eventName + "/"
-        } else {
-            return
-        }
-        
-        if eventValue != nil && eventValue?.characters.count > 0 {
-            tmpURL += eventValue!
-        }
-        
-        print("TMPURL: \(tmpURL)")
-        let url = NSURL(string: tmpURL)
-        let request = NSMutableURLRequest(URL: url!)
-        
-        request.setValue(self._accessKey, forHTTPHeaderField: "Access-Key")
-        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
-            if let data = data {
-                print("AppAnalytic Info (AddEvent): [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
-                self.sendDeviceInfo(self.getDeviceInfo())
-            }
-            if let error = error {
-                print("AppAnalytic Error (AddEvent): [\(error.localizedDescription)]")
-            }
-            }.resume()
-    }
-
-    // //////////////////////////////////////////////////////////////////////////////////////////////////
-    // MARK: SendDeviceInfo()
+    //MARK: SendDeviceInfo()
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     private func sendDeviceInfo(jsonData: NSData){
         // Send data...
@@ -142,7 +107,7 @@ public class AppAnalyticsSwift{
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////////
-    // Mark: GetDeviceInfo()
+    //Mark: GetDeviceInfo()
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     private func getDeviceInfo() -> NSData {
         var json = NSData()
@@ -166,13 +131,13 @@ public class AppAnalyticsSwift{
         do {
             json = try NSJSONSerialization.dataWithJSONObject(info, options: NSJSONWritingOptions.PrettyPrinted)
         } catch let error as NSError {
-            print("AppAnalytic Error: [\(error.localizedDescription)]")
+            print(error)
         }
         return json
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////////
-    // MARK: Init
+    //MARK: Init
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     public init(accessKey key: String){
         self._accessKey = key

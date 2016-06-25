@@ -1,0 +1,21 @@
+PODS:
+  - AppAnalyticsSwift (0.1.1)
+
+DEPENDENCIES:
+  - AppAnalyticsSwift (from `https://github.com/appanalytic/lib-swift.git`)
+
+EXTERNAL SOURCES:
+  AppAnalyticsSwift:
+    :git: https://github.com/appanalytic/lib-swift.git
+
+CHECKOUT OPTIONS:
+  AppAnalyticsSwift:
+    :commit: 88315079ba168a76fe485f50651913b5143865e4
+    :git: https://github.com/appanalytic/lib-swift.git
+
+SPEC CHECKSUMS:
+  AppAnalyticsSwift: c4323d8d924920dba411cd730d0e4abd3054db48
+
+PODFILE CHECKSUM: d75b1d521a66e48befecc3319dc5046233282029
+
+COCOAPODS: 1.0.1
