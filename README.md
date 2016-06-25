@@ -7,13 +7,18 @@
 
 ## Example
 To run the example project:
+
 1. Clone the repo
+
 2. Run `pod install` from the `Example/RealAppTest` directory first
+
 3. Run `RealAppTest.xcworkspace`
 
 ## Requirements
 Enable http domains exception
-info.plist >> 
+
+`info.plist` >> 
+
 Add `App Transport Security Settings` ++>> `Allow Arbitrary Loads = YES` 
 
 ## Installation
