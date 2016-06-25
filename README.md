@@ -48,13 +48,13 @@ app.submitCampain()
 ```
 
 #Events
-If you need to add event with value just call `addEvent` method:
+To add event with value just call `addEvent` method:
 ```swift
-app.addEvent("StartMainController", NSDate())
+app.addEvent(eventName: "StartMainController", eventValue: NSDate())
 ```
 To add event without value call `addEvent` method add put `nil` for value : 
 ```swift
-app.addEvent("StartMainController", nil)
+app.addEvent(eventName: "StartMainController", eventValue: nil)
 ```
 ## Author
 
