@@ -70,20 +70,38 @@ public class AppAnalyticsSwift{
     // MARK: submitCampain Function
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     public func submitCampaign(){
-        let url = NSURL(string: self._APIURL + self._UUID)
-        let request = NSMutableURLRequest(URL: url!)
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-        request.setValue(self._accessKey, forHTTPHeaderField: "Access-Key")
-        
-        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
-            if let data = data {
-                print("AppAnalytic Info: [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
-                self.sendDeviceInfo(self.getDeviceInfo())
-            }
-            if let error = error {
-                print("AppAnalytic Error: [\(error.localizedDescription)")
-            }
-            }.resume()
+        if defaults.boolForKey("firstTimeAppAnalytics") {
+            print("AppAnalytic Info (Submit Campaign): Already initialized")
+        } else {
+            
+            let url = NSURL(string: self._APIURL + self._UUID)
+            let request = NSMutableURLRequest(URL: url!)
+            
+            request.setValue(self._accessKey, forHTTPHeaderField: "Access-Key")
+            
+            NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
+                if let data = data {
+                    do {
+                        let jsonDic = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                        let status = jsonDic["status"] as? String;
+                        if status == "ok" {
+                            defaults.setBool(true, forKey: "firstTimeAppAnalytics")
+                            print("AppAnalytic Info (Submit Campaign): [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
+                            self.sendDeviceInfo(self.getDeviceInfo())
+                        }
+                    } catch {
+                        print("AppAnalytic Error (Submit Campaign): [Error in deserialize AppAnalytics.ir JSON result]")
+                        defaults.setBool(false, forKey: "firstTimeAppAnalytics")
+                    }
+                }
+                if let error = error {
+                    print("AppAnalytic Error (Submit Campaign): [\(error.localizedDescription)")
+                    defaults.setBool(false, forKey: "firstTimeAppAnalytics")
+                }
+                }.resume()
+        }
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,7 +140,7 @@ public class AppAnalyticsSwift{
     // MARK: SendDeviceInfo()
     // //////////////////////////////////////////////////////////////////////////////////////////////////
     private func sendDeviceInfo(jsonData: NSData){
-        // Send data...
+        let defaults = NSUserDefaults.standardUserDefaults()
         let url = NSURL(string: self._APIURL_DeviceInfo + self._UUID)
         let request = NSMutableURLRequest(URL: url!)
         
@@ -133,10 +151,23 @@ public class AppAnalyticsSwift{
         
         NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
             if let data = data {
-                print("AppAnalytic Info (Send Device Info): [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
+                
+                do {
+                    let jsonDic = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                    let status = jsonDic["status"] as? String;
+                    if status == "ok" {
+                        defaults.setBool(true, forKey: "firstTimeAppAnalytics")
+                        print("AppAnalytic Info (Send Device Info): [", String(data: data, encoding: NSUTF8StringEncoding)!,"]")
+                    }
+                } catch {
+                    print("AppAnalytic Error (Send Device Info): [Error in deserialize AppAnalytics.ir JSON result]")
+                    defaults.setBool(false, forKey: "firstTimeAppAnalytics")
+                }
+                
             }
             if let error = error {
-                print("AppAnalytic Error: [\(error.localizedDescription)]")
+                print("AppAnalytic Error (Send Device Info): [\(error.localizedDescription)]")
+                defaults.setBool(false, forKey: "firstTimeAppAnalytics")
             }
             }.resume()
     }
