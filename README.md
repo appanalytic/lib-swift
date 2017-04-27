@@ -1,3 +1,5 @@
+> Discontinued and will not be updated!
+
 # AppAnalyticsSwift
 
 [![CI Status](http://img.shields.io/travis/appanalytic/lib-swift.svg?style=flat)](https://travis-ci.org/appanalytic/lib-swift)
